@@ -150,8 +150,10 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Given a dataset of expert trajectory, standard imitation learning approaches typically learn a direct mapping from observations (e.g., RGB images) to actions. However, such mthods often overlook the rich interplay between different modalities, i.e., sensory inputs, actions, and rewards—which is crucial for modeling robot behavior and understanding task outcomes. In this work, we propose Masked Trajectory Diffusion (MTD), a unified framework for learning from multimodal robot trajectories via masked diffusion model. Given sequences of point clouds, actions, force signals, and rewards, MTD randomly masks out data entries and trains a diffusion model to reconstruct them. This training objective encourages the model to learn temporal and cross-modal dependencies, such as predicting the effects of actions on force or inferring states from partial observations. 
-            We evaluate MTD on contact-rich, partially observable manipulation tasks in simulation. We also demonstrate that MTD can simultaneously serve as a planner, a dynamics model, and an anomaly detector with a single model without retraining. 
+            Given a dataset of expert trajectories, standard imitation learning approaches typically learn a direct mapping from observations (e.g., RGB images) to actions. However, such methods often overlook the rich interplay between different modalities, i.e., sensory inputs, actions, and rewards &mdash; which is crucial for modeling robot behavior and understanding task outcomes. In this work, we propose <em>Multimodal Diffusion Forcing</em>, a unified framework for learning from multimodal robot trajectories that extends beyond action generation.
+            Rather than modeling a fixed distribution, MDF applies random partial masking and trains a diffusion model to reconstruct the trajectory. This training objective encourages the model to learn temporal and cross-modal dependencies, such as predicting the effects of actions on force signals or inferring states from partial observations.
+            We evaluate MDF on contact-rich, forceful manipulation tasks in simulated and real-world environments. Our results show that MDF not only delivers versatile functionalities, but also achieves strong performance, and robustness under noisy observations.
+          
           </p>
         </div>
       </div>
